@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.TretyakovDV.Sprint5.Task0.V9.Lib;
+using Tyuiu.TretyakovDV.Sprint5.Task7.V6.Lib;
+using System.IO;
 
-namespace Tyuiu.TretyakovDV.Sprint5.Task0.V9
+namespace Tyuiu.TretyakovDV.Sprint5.Task7.V6
 {
     class Program
     {
@@ -16,26 +17,25 @@ namespace Tyuiu.TretyakovDV.Sprint5.Task0.V9
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: Создание итогового решения по спринту                             *");
-            Console.WriteLine("* Задание #0                                                              *");
-            Console.WriteLine("* Вариант #9                                                              *");
+            Console.WriteLine("* Задание #7                                                              *");
+            Console.WriteLine("* Вариант #6                                                             *");
             Console.WriteLine("* Выполнил: Третьяков Денис Викторович | ПКТб-23-1                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дано выражение вычислить его значение при x = 3, результат сохранить    *");
-            Console.WriteLine("* в текстовый файл OutPutFileTask0.txt и вывести на консоль. Округлить    *");
-            Console.WriteLine("* до трёх знаков после запятой.                                           *");
+            Console.WriteLine("* Дана функция, шаг -5;5, провести проверку деления на 0, результат       *");
+            Console.WriteLine("* сохранить в текстовый файл OutPutFileTask1.txt и вывести на консоль.    *");
+            Console.WriteLine("* Округлить до двух знаков после запятой.                                 *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*ИСХОДНЫЕ ДАННЫЕ:                                                         *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("x = 3");
-            int x = 3;
-
+            string path = $@"{Directory.GetCurrentDirectory()}\InPutDataFileTask7V6.txt";
+            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutDataFileTask7V6.txt";
+            Console.WriteLine("Данные находятся в файле: " + path);
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*РЕЗУЛЬТАТ:                                                               *");
             Console.WriteLine("***************************************************************************");
-            string res = ds.SaveToFileTextData(x);
-            Console.WriteLine("Файл: " + res);
-            Console.WriteLine("Создан!");
+            pathSaveFile = ds.LoadDataAndSave(path);
+            Console.WriteLine(pathSaveFile);
 
             Console.ReadKey();
 
